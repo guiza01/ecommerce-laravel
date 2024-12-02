@@ -17,11 +17,11 @@ class StoreFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->sentence,
-            'phone' => $this->faker->phoneNumber,
-            'mobile' => $this->faker->phoneNumber,
-            'slug' => $this->faker->slug(),
+            'name' => $this->faker->company(), // Nome de empresa (mais realista para uma loja)
+            'description' => $this->faker->sentence(), // Frase aleatória
+            'phone' => $this->faker->phoneNumber(), // Número de telefone fixo
+            'mobile' => $this->faker->e164PhoneNumber(), // Número de telefone no formato E.164
+            'slug' => $this->faker->slug(), // Slug para a URL da loja
         ];
     }
 }

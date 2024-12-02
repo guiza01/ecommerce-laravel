@@ -8,10 +8,8 @@ use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder
     {
-        public function run(): void
+        public function run()
     {
-        User::factory(40)->create()->each(function ($user) {
-        $user->store()->create(Store::factory()->make()->toArray());
-        });
+        User::factory()->count(10)->create();
     }
 }

@@ -1,46 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="mt-5">Criar Loja</h1>
-<form action="{{route('admin.stores.store')}}" method="post">
-    <input type="hidden" name="_token" value="{{csrf_token()}}">
-    <div class="form-group">
-        <label>Nome loja</label>
-            <input type="text" name="name" id="" class="form-control">
-    </div>
+    <h1 class="mt-5">Criar Loja</h1>
+    <form action="{{route('admin.stores.store')}}" method="post">
+        @csrf
+        <div class="form-group">
+            <label>Nome loja</label>
+                <input type="text" name="name" id="" class="form-control">
+        </div>
 
-    <div class="form-group">
-        <label>Descrição</label>
-            <input type="text" name="description" id="" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label>Telefone</label>
-            <input type="text" name="phone" id="" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label>Celular/Whastapp</label>
-            <input type="text" name="mobile_phone" id="" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label>Slug</label>
-            <input type="text" name="slug" id="" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label>Usuário</label>
-            <select name="user" class="form-control">
-                @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
-                @endforeach
-            </select>
-    </div>
-    
-    <div class="form-group">
-        <button class="btn btn-success mt-2 btn-lg" type="submit">Cadastrar</button>
-    </div>
-</form>
+        <div class="form-group">
+            <label>Descrição</label>
+                <input type="text" name="description" id="" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label>Telefone</label>
+                <input type="text" name="phone" id="" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label>Celular/Whastapp</label>
+                <input type="text" name="mobile_phone" id="" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label>Slug</label>
+                <input type="text" name="slug" id="" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label>Usuário</label>
+                <select name="user" class="form-control">
+                    @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endforeach
+                </select>
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn-success mt-2 btn-lg" type="submit">Cadastrar</button>
+        </div>
+    </form>
 
 @endsection

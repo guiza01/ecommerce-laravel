@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\StoreController;
 
 Route::get('/admin/stores', [StoreController::class, 'index']);
 
-Route::get('/', function () { return view('welcome'); });
+Route::get('/', function () { return view('welcome'); })->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('admin')->as('admin.')->group(function () {
@@ -22,4 +22,4 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

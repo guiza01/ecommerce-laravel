@@ -59,15 +59,6 @@
         </div>
 
         <div class="form-group">
-            <label>Lojas</label>
-                <select name="store" class="form-control">
-                    @foreach($stores as $store)
-                    <option value="{{$store->id}}">{{$store->name}}</option>
-                    @endforeach
-                </select>
-        </div>
-
-        <div class="form-group">
             <button class="btn btn-success mt-2 btn-lg" type="submit">Cadastrar</button>
         </div>
     </form>

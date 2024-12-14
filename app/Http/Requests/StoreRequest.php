@@ -24,8 +24,18 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'description' => 'required|min:10',
-            'phone' => 'required|min:11',
-            'mobile_phone' => 'required|min:11',
+            'phone' => 'required|min:10',
+            'mobile_phone' => 'required|min:10',
+            'slug' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'min' => 'Campo deve ter no mínimo 10 caracteres',
+            'max' => 'Campo deve ter no maximo 255 caracteres',
+            'required' => 'Preencha o campo corretamente',
         ];
     }
 }

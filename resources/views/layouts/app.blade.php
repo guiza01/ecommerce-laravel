@@ -24,13 +24,16 @@
             <li class="nav-item">
             <a class="nav-link @if(request()->is('admin/products')) active @endif" href="{{route('admin.products.index')}}">Produtos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @if(request()->is('admin/categories')) active @endif" href="{{route('admin.categories.index')}}">Categorias</a>
+            </li>
         </ul>
         <div class="my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link active" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit(); ">Sair</a>
 
-                    <form action="{{route('logout')}}" class="logout" method="post" style="display:nome;">
+                    <form action="{{route('logout')}}" class="logout" method="post">
                         @csrf
                     </form>
                 </li>
@@ -45,6 +48,6 @@
         @include('flash::message')
         @yield('content')
     </div>
-    
+
 </body>
 </html>

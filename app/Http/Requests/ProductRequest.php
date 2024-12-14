@@ -30,4 +30,13 @@ class ProductRequest extends FormRequest
 
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'min' => 'Campo deve ter no mínimo 10 caracteres',
+            'max' => 'Campo deve ter no maximo 255 caracteres',
+            'required' => 'Preencha o campo corretamente',
+        ];
+    }
 }

@@ -55,15 +55,6 @@
         </div>
 
         <div class="form-group">
-            <label>Usuário</label>
-                <select name="user" class="form-control">
-                    @foreach($users as $user)
-                    <option value="{{$user->id}}">{{$user->name}}</option>
-                    @endforeach
-                </select>
-        </div>
-
-        <div class="form-group">
             <button class="btn btn-success mt-2 btn-lg" type="submit">Cadastrar</button>
         </div>
     </form>
